@@ -1,0 +1,18 @@
+<div  class="container-fluid d-flex justify-content-center align-items-center height">
+    <form class="shadow-lg p-3 mb-5 bg-body rounded" [formGroup]="loginForm" >
+        <legend>Login</legend>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input formControlName="email" type="text" id="email" class="form-control" placeholder="Your email here">
+        </div>
+        <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Password</label>
+            <input formControlName="password" type="password" id="password" class="form-control" placeholder="your password here">
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-block" (click)="login()" >Submit</button>
+        </div>
+    </form>
+</div>
+
+<p>Form Status: {{ loginForm.value | json }}</p>

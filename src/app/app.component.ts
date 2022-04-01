@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StorageService } from './core/services/storage.service';
+import { AuthenticationService } from './login/shared/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'chat';
+  
+  constructor(private storageService: StorageService) { }
+
+  isLoggedIn() {
+    return this.storageService.isAuthenticated();
+  }
+
+  logout() {
+    this.storageService.logout();
+  }
+
 }
